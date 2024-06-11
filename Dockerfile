@@ -32,7 +32,7 @@ COPY next.config.mjs .
 COPY jsconfig.json .
 COPY tailwind.config.js .
 COPY postcss.config.js .
-COPY components.json
+COPY components.json .
 
 # Ensure .next/cache directory exists and has the correct permissions
 RUN mkdir -p /app/.next/cache/images && chmod -R 755 /app/.next/cache
