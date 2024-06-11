@@ -59,6 +59,9 @@ FROM base AS runner
 
 WORKDIR /app
 
+# Copy the .npmrc file to use the credentials during the build process
+COPY .npmrc .npmrc
+
 # Don't run production as root
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
