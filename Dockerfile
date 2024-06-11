@@ -27,6 +27,8 @@ RUN \
   fi
 
 COPY src ./src
+COPY data ./data
+COPY utils ./utils
 COPY public ./public
 COPY next.config.mjs .
 COPY jsconfig.json .
