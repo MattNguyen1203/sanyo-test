@@ -3,7 +3,7 @@ FROM node:21-alpine AS base
 # Step 1. Rebuild the source code only when needed
 FROM base AS builder
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy the .npmrc file to use the credentials during the build process
 COPY .npmrc .npmrc
@@ -68,7 +68,7 @@ RUN \
 # Step 2. Production image, copy all the files and run next
 FROM base AS runner
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy the .npmrc file to use the credentials during the build process
 COPY .npmrc .npmrc
